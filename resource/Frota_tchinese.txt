@@ -1,0 +1,209 @@
+"lang"
+{
+	"Language"      "tchinese"
+	"Tokens"
+	{
+		/////////////////
+		// BASE STRINGS
+		////////////////
+
+		// Name of the game
+		"game_mode_15"                  "FROTA"
+
+		// Toggle ready state
+		"afs_toggle_ready"				"選擇完畢"
+
+		// Vote related
+		"afs_seconds_remaining"         "秒後結束"
+		"afs_second_remaining"          "秒後結束"
+		"afs_vote_ends_in"              "投票將在"
+		"afs_cast_vote"                 "投票"          // The text on the vote button
+		"afs_vote_yes"                  "是"           // Vote yes button
+		"afs_vote_no"                   "否"            // Vote no button
+
+		// Picking related
+		"afs_picking_timer"             "挑選將在"
+		"afs_tab_pick_skills"           "挑選技能"
+		"afs_tab_pick_hero"             "挑選英雄"
+
+		/////////////////
+		// GAME MODES
+		////////////////
+
+		// All Pick
+		"afs_name_allpick"				"全陣營選擇"
+		"afs_des_allpick"				"從大部分英雄中選取。"
+
+		// Legends of Dota
+		"afs_name_lod"                  "Legends of dota"
+		"afs_des_lod"                   "選擇你的技能和英雄。"
+
+		// Random OMG
+		"afs_name_romg"                 "隨機OMG"
+		"afs_des_romg"                  "獲得一個隨機英雄，三個隨機技能以及一個隨機大招。"
+
+		// PvP Arena
+		"afs_name_arena"                "PvP競技場"
+		"afs_des_arena"                 "簡易的PvP競技場模式。"
+
+		// Score Limit
+		"afs_o_scoreLimit"              "限制分數"
+		"afs_od_scoreLimit"             "團隊獲得勝利所需要的人頭數。"
+
+		// Pudge Wars
+		"afs_name_pudgewars"            "鉤肥大戰"
+		"afs_des_pudgewars"             "扮演帕吉，搶先殺死10人的隊伍獲勝。"
+
+		// Tiny Wars
+		"afs_name_tinywars"				"小小大戰"
+		"afs_des_tinywars"				"扮演小小，搶先殺死10人的隊伍獲勝。"
+
+		// Sunstrike Wars
+		"afs_name_sunstrikewars"		"天火大戰"
+		"afs_des_sunstrikewars"			"一玩家出生時帶有陽炎沖擊技能，用該技能殺死其他所有玩家來取得勝利。"
+
+		// Pure Skill
+		"afs_name_pureskill"            "純技巧模式"
+		"afs_des_pureskill"             "扮演米拉娜，擁有裂地尖刺、月神之箭、肉鉤 以及 寒冰碎片 技能。"
+
+		// Invoker Wars
+		"afs_name_INVOKERWARZ"          "祈求者大戰"
+		"afs_des_INVOKERWARZ"           "你是該死的巫師'Arry。"
+
+		// Puck Wars
+		"afs_name_puckwars"             "帕克大戰"
+		"afs_des_puckwars"              "扮演帕克 >_>"
+
+		// Warlocks
+		"afs_name_warlocks"            "術士大戰"
+		"afs_des_warlocks"             "扮演一個菜鳥術士, 滿地圖隨意閃爍並像玩燙手山芋一樣施放不穩定技能。"
+
+		// RvS
+		"afs_name_rvs"            "兔子vs小羊"
+		"afs_des_rvs"             "兔子怎麽叫？"
+
+		/////////////////
+		// GAME ADDONS
+		////////////////
+
+		// WTF
+		"afs_name_wtf"                  "WTF模式"
+		"afs_des_wtf"                   "技能與物品的使用沒有冷卻時間和魔法消耗。"
+
+		// Free Blink Dagger
+		"afs_name_freeBlinkDagger"      "免費跳刀"
+		"afs_des_freeBlinkDagger"       "每個人出生時帶有一把免費的跳刀。"
+
+		// No Buying
+		"afs_name_noBuying"				"無購買模式"
+		"afs_des_noBuying"				"無法購買物品。"
+
+		// DM Mode
+		"afs_name_dmmode"				"死亡競賽模式"
+		"afs_des"dmmode"				"死後立即重生為新英雄！"
+
+		// Fat-o-Meter
+		"afs_name_fatometer"			"Fat-o-Meter"
+		"afs_des_fatometer"				"英雄殺死小兵或其他英雄時會長大一點點。"
+
+		/////////////////
+		// ABILITIES
+		////////////////
+
+		// Invoker Wars
+		"DOTA_Tooltip_ability_invoker_wars_sun_strike"                                  "陽炎沖擊"
+		"DOTA_Tooltip_ability_invoker_wars_sun_strike_Description"                      "向目標區域釋放毀滅性的陽炎之光能量，一旦能量著陸，將對區域內的敵人進行灼燒。區域內敵人將平攤所有傷害。"
+		"DOTA_Tooltip_ability_invoker_wars_sun_strike_Lore"                             "哈雷克之火葬魔咒。"
+		"DOTA_Tooltip_ability_invoker_wars_sun_strike_Note0"                                "施放後立即獲得目標區域的視野。"
+		"DOTA_Tooltip_ability_invoker_wars_sun_strike_Note1"                                "使用陽炎沖擊擊殺英雄後，即使相距超過1200碼的經驗範圍也能獲得經驗。"
+		"DOTA_Tooltip_ability_invoker_wars_sun_strike_area_of_effect"                   "作用範圍："
+		"DOTA_Tooltip_ability_invoker_wars_sun_strike_delay"                                "延遲："
+		"DOTA_Tooltip_ability_invoker_wars_sun_strike_damage"                           "傷害："
+		"DOTA_Tooltip_ability_invoker_wars_deafening_blast"                             "超震聲波"
+		"DOTA_Tooltip_ability_invoker_wars_deafening_blast_Description"                 "祈求者在自己前方釋放出超強的聲波，對所有敵方單位造成傷害。"
+		"DOTA_Tooltip_ability_invoker_wars_deafening_blast_Lore"                        "布魯馮特之無力聲波。"
+		"DOTA_Tooltip_ability_invoker_wars_deafening_blast_Note0"                       "此技能可以打斷持續施法。"
+		"DOTA_Tooltip_ability_invoker_wars_deafening_blast_damage"                      "傷害："
+		"DOTA_Tooltip_ability_invoker_wars_deafening_blast_knockback_duration"          "擊退持續時間："
+		"DOTA_Tooltip_ability_invoker_wars_deafening_blast_disarm_duration"             "禁止攻擊時間："
+		"DOTA_Tooltip_ability_invoker_wars_chaos_meteor"                                    "肉丸子"
+		"DOTA_Tooltip_ability_invoker_wars_chaos_meteor_Description"                        "祈求者從太空中召喚一坨燃燒的肉丸子打擊指定位置。肉丸子著陸後會向前滾動一段距離，根據等級繼續造成傷害，滾動距離取決於等級。受到效果影響的單位會被點燃並受到持續傷害，持續傷害取決於等級。"
+		"DOTA_Tooltip_ability_invoker_wars_chaos_meteor_Lore"                           "塔拉克的天墜之火。"
+		"DOTA_Tooltip_ability_invoker_wars_chaos_meteor_Note0"                          "每個敵方單位受到傷害的間隔為0.5秒，後續較小的灼燒傷害持續3秒。"
+		"DOTA_Tooltip_ability_invoker_wars_chaos_meteor_Note1"                          "肉丸子移動的速度為300。"
+		"DOTA_Tooltip_ability_invoker_wars_chaos_meteor_land_time"                      "生效延遲："
+		"DOTA_Tooltip_ability_invoker_wars_chaos_meteor_travel_distance"                    "滾動距離："
+		"DOTA_Tooltip_ability_invoker_wars_chaos_meteor_area_of_effect"                 "作用範圍："
+		"DOTA_Tooltip_ability_invoker_wars_chaos_meteor_damage_interval"                    "傷害間隔："
+		"DOTA_Tooltip_ability_invoker_wars_chaos_meteor_main_damage"                        "傷害："
+		"DOTA_Tooltip_ability_invoker_wars_chaos_meteor_burn_duration"                  "燃燒時間："
+		"DOTA_Tooltip_ability_invoker_wars_chaos_meteor_burn_dps"                       "每秒燃燒傷害："
+		"DOTA_Tooltip_ability_invoker_wars_leap"                                                "糟糕巫師之躍"
+		"DOTA_Tooltip_ability_invoker_wars_leap_Description"                                    "祈求者向前跳躍加入戰鬥，著地時發出一聲兇狠的咆哮鼓舞友方單位，提升攻擊和移動速度。速度加成持續10秒。"
+		"DOTA_Tooltip_ability_invoker_wars_leap_Lore"                                           "在戰鬥最激烈的時候，敵我雙方都會註意到祈求者標誌性的糟糕巫師。"
+		"DOTA_Tooltip_ability_invoker_wars_leap_Note0"                                      "可以使用跳躍躲避攻擊和技能彈道。"
+		"DOTA_Tooltip_ability_invoker_wars_leap_leap_distance"                              "距離："
+		"DOTA_Tooltip_ability_invoker_wars_leap_leap_speedbonus"                                "%移動速度增加："
+		"DOTA_Tooltip_ability_invoker_wars_leap_leap_speedbonus_as"                         "攻擊速度提升："
+
+		// Warlocks
+		"DOTA_Tooltip_Ability_warlocks_unstable_spell"      "不穩定法術"
+		"DOTA_Tooltip_Ability_warlocks_unstable_spell_Description"      "你懂的，這看起來不太安全？不太穩定？我不知道……也許可以扔向某個倒黴的傻屌？你最好別傻楞著看結局。"
+		"DOTA_Tooltip_Ability_warlocks_novice_jaunt"        "菜鳥之翼"
+		"DOTA_Tooltip_Ability_warlocks_novice_jaunt_Description"        "你可以盡力飛一會兒，但飛不遠。"
+		"DOTA_Tooltip_Ability_warlocks_novice_hex"      "菜鳥妖術"
+		"DOTA_Tooltip_Ability_warlocks_novice_hex_Description"      "有一半的幾率會施放在自己身上。"
+		"DOTA_Tooltip_Ability_warlocks_novice_ethereal"     "菜鳥虛無"
+		"DOTA_Tooltip_Ability_warlocks_novice_ethereal_Description"     "虛化你自身，你的朋友，你的教授；無論如何，中招的人可得小心法術。"
+
+		// Lycan Paw
+		"DOTA_Tooltip_Ability_item_lycan_paw"					"狼人之爪"
+		"DOTA_Tooltip_Ability_item_lycan_paw_description"		"貝恩霍勒健步如飛的靈魂提高了帕吉那異常笨重的步伐。"
+		"DOTA_Tooltip_ability_item_lycan_paw_movespeed_bonus"	"移動速度提升："
+		"DOTA_Tooltip_ability_item_lycan_paw_item_level"		"等級："
+		"DOTA_Tooltip_Ability_item_lycan_paw_2"					"狼人之爪"
+		"DOTA_Tooltip_Ability_item_lycan_paw_2_description"		"貝恩霍勒健步如飛的靈魂提高了帕吉那異常笨重的步伐。"
+		"DOTA_Tooltip_ability_item_lycan_paw_2_movespeed_bonus"	"移動速度提升："
+		"DOTA_Tooltip_ability_item_lycan_paw_2_item_level"		"等級："
+		"DOTA_Tooltip_Ability_item_lycan_paw_3"					"狼人之爪"
+		"DOTA_Tooltip_Ability_item_lycan_paw_3_description"		"貝恩霍勒健步如飛的靈魂提高了帕吉那異常笨重的步伐。"
+		"DOTA_Tooltip_ability_item_lycan_paw_3_movespeed_bonus"	"移動速度提升："
+		"DOTA_Tooltip_ability_item_lycan_paw_3_item_level"		"等級："
+		"DOTA_Tooltip_Ability_item_lycan_paw_4"					"狼人之爪"
+		"DOTA_Tooltip_Ability_item_lycan_paw_4_description"		"貝恩霍勒健步如飛的靈魂提高了帕吉那異常笨重的步伐。"
+		"DOTA_Tooltip_ability_item_lycan_paw_4_movespeed_bonus"	"移動速度提升："
+		"DOTA_Tooltip_ability_item_lycan_paw_4_item_level"		"等級："
+		"DOTA_Tooltip_Ability_item_lycan_paw_5"					"狼人之爪"
+		"DOTA_Tooltip_Ability_item_lycan_paw_5_description"		"貝恩霍勒健步如飛的靈魂提高了帕吉那異常笨重的步伐。"
+		"DOTA_Tooltip_ability_item_lycan_paw_5_movespeed_bonus"	"移動速度提升："
+		"DOTA_Tooltip_ability_item_lycan_paw_5_movespeed_percentage_bonus"	"移動速度百分比提升："
+		"DOTA_Tooltip_ability_item_lycan_paw_5_attackspeed_bonus"			"攻擊速度提升："
+		"DOTA_Tooltip_ability_item_lycan_paw_5_item_level"		"等級："
+
+        // Puck Wars
+        "DOTA_Tooltip_ability_puckwars_waning_rift"                                                                                        "新月之痕"
+        "DOTA_Tooltip_ability_puckwars_waning_rift_Description"                                                                "帕克灑出它神秘的仙女粉塵，對周圍的敵人造成傷害並使其沈默。"
+        "DOTA_Tooltip_ability_puckwars_waning_rift_Lore"                                                                        "帕克淘氣地一笑，同時將她能中斷魔法流動的附魔粉塵灑出。"
+        "DOTA_Tooltip_ability_puckwars_waning_rift_radius"                                                                        "作用範圍："
+        "DOTA_Tooltip_ability_puckwars_waning_rift_silence_duration"                                                "持續時間："
+        "DOTA_Tooltip_ability_puckwars_phase_shift"                                                                                        "相位轉移"
+        "DOTA_Tooltip_ability_puckwars_phase_shift_Description"                                                                "帕克暫時將自己轉移到另一個位面，從而免疫傷害。"
+        "DOTA_Tooltip_ability_puckwars_phase_shift_Lore"                                                                        "帶著嘲笑，帕克瞬間轉移到了她的異維度。"
+        "DOTA_Tooltip_ability_puckwars_phase_shift_Note0"                                                                        "帕克在相位轉移狀態下依然具有碰撞體積。"
+        "DOTA_Tooltip_ability_puckwars_phase_shift_Note1"                                                                        "進行任何動作都會中止相位轉移。"
+        "DOTA_Tooltip_ability_puckwars_phase_shift_Note2"                                                                        "帕克在相位轉移狀態下無敵。"
+        "DOTA_Tooltip_ability_puckwars_phase_shift_duration"                                                                "持續時間："
+        "DOTA_Tooltip_ability_puckwars_dream_coil"                                                                                        "夢境纏繞"
+        "DOTA_Tooltip_ability_puckwars_dream_coil_Description"                                                                "創造一個變化無常的的魔法夢境來困住敵方英雄，對他們造成0.5秒的眩暈和傷害。如果被困住的敵方英雄試圖走出夢境掙脫纏繞，將因為夢境破碎而再次受到傷害和眩暈。\n\n神杖升級：提升夢境破碎的傷害，增加夢境持續時間。"
+        "DOTA_Tooltip_ability_puckwars_dream_coil_Lore"                                                                                "仙女龍散播混亂，讓敵人陷入鮮活的夢境，見證自己死亡的命運。"
+        "DOTA_Tooltip_ability_puckwars_dream_coil_Note0"                                                                        "初始眩暈和傷害可以被林肯法球抵擋，但是目標依然會受到夢境纏繞的作用。"
+        "DOTA_Tooltip_ability_puckwars_dream_coil_coil_break_radius"                                                "破碎範圍："
+        "DOTA_Tooltip_ability_puckwars_dream_coil_coil_stun_duration"                                                "破碎眩暈："
+        "DOTA_Tooltip_ability_puckwars_dream_coil_coil_break_damage"                                                "破碎傷害："
+        "DOTA_Tooltip_ability_puckwars_dream_coil_coil_duration"                                                        "纏繞持續時間："
+        "DOTA_Tooltip_ability_puckwars_dream_coil_coil_duration_scepter"                                        "神杖升級夢境纏繞持續時間："
+        "DOTA_Tooltip_ability_puckwars_dream_coil_coil_break_damage_scepter"                                "神杖升級破碎傷害："
+        "DOTA_Tooltip_ability_puckwars_dream_coil_aghanim_description"                                                "提高夢境破碎傷害並增加夢境持續時間。"
+
+	}
+}
