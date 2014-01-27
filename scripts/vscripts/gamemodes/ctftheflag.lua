@@ -104,7 +104,32 @@ RegisterGamemode('ctftheflag', {
                     end
                 end
             end
- 
+
+            if heroWithFlag then
+                local hero = heroWithFlag
+                if hero then
+                    for i=0, 5 do
+                        local item = hero:GetItemInSlot(i)
+                        if item then
+                            if item:GetAbilityName() == 'item_capture_flag' then
+                                hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
+                                hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
+                                heroWithFlag = hero
+                                break
+                            else
+                                hero:RemoveModifierByName('modifier_creep_slow')
+                                hero:RemoveModifierByName('modifier_silence')
+                                heroWithFlag = nil
+                            end
+                        else
+                            hero:RemoveModifierByName('modifier_creep_slow')
+                            hero:RemoveModifierByName('modifier_silence')
+                            heroWithFlag = nil
+                        end
+                    end
+                end                
+            end
+            print('finish thinking')
     end,
  
     dota_item_picked_up = function(frota, keys)
