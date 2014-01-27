@@ -59,6 +59,7 @@ RegisterGamemode('ctftheflag', {
                                UTIL_RemoveImmediate(item)
                                hero:RemoveModifierByName('modifier_creep_slow')
                                hero:RemoveModifierByName('modifier_silence')
+                               hero:RemoveModifierByName('modifier_bounty_hunter_track')
                                heroWithDireFlag = nil
                                frota.scoreRadiant = frota.scoreRadiant + 1
                                frota:UpdateScoreData()
@@ -85,6 +86,7 @@ RegisterGamemode('ctftheflag', {
                                UTIL_RemoveImmediate(item)
                                hero:RemoveModifierByName('modifier_creep_slow')
                                hero:RemoveModifierByName('modifier_silence')
+                               hero:RemoveModifierByName('modifier_bounty_hunter_track')
                                heroWithFlag = nil
                                frota.scoreDire = frota.scoreDire + 1
                                frota:UpdateScoreData()
@@ -104,16 +106,19 @@ RegisterGamemode('ctftheflag', {
                             if item:GetAbilityName() == 'item_capture_flag' or item:GetAbilityName() == 'item_capture_flag_dire' then
                                 hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
                                 hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
+                                hero:AddNewModifier(hero, nil, 'modifier_bounty_hunter_track' ,nil)
                                 heroWithFlag = hero
                                 break
                             else
                                 hero:RemoveModifierByName('modifier_creep_slow')
                                 hero:RemoveModifierByName('modifier_silence')
+                                hero:RemoveModifierByName('modifier_bounty_hunter_track')
                                 heroWithFlag = nil
                             end
                         else
                             hero:RemoveModifierByName('modifier_creep_slow')
                             hero:RemoveModifierByName('modifier_silence')
+                            hero:RemoveModifierByName('modifier_bounty_hunter_track')
                             heroWithFlag = nil
                         end
                     end
@@ -129,16 +134,19 @@ RegisterGamemode('ctftheflag', {
                             if  item:GetAbilityName() == 'item_capture_flag_dire' then
                                 hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
                                 hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
+                                hero:AddNewModifier(hero, nil, 'modifier_bounty_hunter_track' ,nil)
                                 heroWithDireFlag = hero
                                 break
                             else
                                 hero:RemoveModifierByName('modifier_creep_slow')
                                 hero:RemoveModifierByName('modifier_silence')
+                                hero:RemoveModifierByName('modifier_bounty_hunter_track')
                                 heroWithDireFlag = nil
                             end
                         else
                             hero:RemoveModifierByName('modifier_creep_slow')
                             hero:RemoveModifierByName('modifier_silence')
+                            hero:RemoveModifierByName('modifier_bounty_hunter_track')
                             heroWithDireFlag = nil
                         end
                     end
@@ -161,6 +169,7 @@ RegisterGamemode('ctftheflag', {
                         else
                             hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
                             hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
+                            hero:AddNewModifier(hero, nil, 'modifier_bounty_hunter_track' ,nil)
                             heroWithFlag = hero
                             break  
                         end
@@ -173,6 +182,7 @@ RegisterGamemode('ctftheflag', {
                         else
                             hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
                             hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
+                            hero:AddNewModifier(hero, nil, 'modifier_bounty_hunter_track' ,nil)
                             heroWithDireFlag = hero
                             break  
                         end
