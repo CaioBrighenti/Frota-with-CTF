@@ -61,6 +61,7 @@ RegisterGamemode('ctftheflag', {
                                UTIL_RemoveImmediate(item)
                                hero:RemoveModifierByName('modifier_creep_slow')
                                hero:RemoveModifierByName('modifier_silence')
+                               hero:RemoveModifierByName('modifier_bloodseeker_thirst_vision')
                                frota.scoreRadiant = frota.scoreRadiant + 1
                                frota:UpdateScoreData()
                                local flag = CreateItem('item_capture_flag', nil, nil)
@@ -91,6 +92,7 @@ RegisterGamemode('ctftheflag', {
                                UTIL_RemoveImmediate(item)
                                hero:RemoveModifierByName('modifier_creep_slow')
                                hero:RemoveModifierByName('modifier_silence')
+                               hero:RemoveModifierByName('modifier_bloodseeker_thirst_vision')
                                heroWithFlag = nil
                                frota.scoreDire = frota.scoreDire + 1
                                frota:UpdateScoreData()
@@ -108,22 +110,29 @@ RegisterGamemode('ctftheflag', {
             if heroWithFlag then
                 local hero = heroWithFlag
                 if hero then
+
+
+
+
                     for i=0, 5 do
                         local item = hero:GetItemInSlot(i)
                         if item then
                             if item:GetAbilityName() == 'item_capture_flag' then
                                 hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
                                 hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
+                                hero:AddNewModifier(hero, nil, 'modifier_bloodseeker_thirst_vision' ,nil)
                                 heroWithFlag = hero
                                 break
                             else
                                 hero:RemoveModifierByName('modifier_creep_slow')
                                 hero:RemoveModifierByName('modifier_silence')
+                                hero:RemoveModifierByName('modifier_bloodseeker_thirst_vision')
                                 heroWithFlag = nil
                             end
                         else
                             hero:RemoveModifierByName('modifier_creep_slow')
                             hero:RemoveModifierByName('modifier_silence')
+                            hero:RemoveModifierByName('modifier_bloodseeker_thirst_vision')
                             heroWithFlag = nil
                         end
                     end
@@ -141,6 +150,7 @@ RegisterGamemode('ctftheflag', {
                     if item:GetAbilityName() == 'item_capture_flag' then
                         hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
                         hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
+                        hero:AddNewModifier(hero, nil, 'modifier_bloodseeker_thirst_vision' ,nil)
                         heroWithFlag = hero
                         print('flag picked up')
                         break
