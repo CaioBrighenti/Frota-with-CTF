@@ -29,7 +29,7 @@ require('gamemodes/kaolinwars')
 require('gamemodes/kunkkawars')
 require('gamemodes/oddball')
 require('gamemodes/kotolofthehill')
-require('gamemodes/ctfofthehill')
+require('gamemodes/ctftheflag')
 
 -- Include addons
 require('gamemodes/fatometer')
