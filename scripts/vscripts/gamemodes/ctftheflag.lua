@@ -30,10 +30,21 @@ RegisterGamemode('ctftheflag', {
     onGameStart = function(frota)
     print('running onGameStart')
     local heroWithFlag = nil
+    local goodGuysBase = Entities:FindByName(nil, 'base_goodguys')
+    local goodGuysBaseVec = goodGuysBase:GetOrigin()
+    local badGuysBase = Entities:FindByName(nil, 'base_badguys')
+    local badGuysBaseVec = badGuysBase:GetOrigin()
+
     local flag = CreateItem('item_capture_flag', nil, nil)
-    local flag_drop = CreateItemOnPosition(Vec3(0,0,0))
+    local flag_drop = CreateItemOnPosition(goodGuysBaseVec)
     if flag_drop then
         flag_drop:SetContainedItem( flag )
+    end
+
+        local flag = CreateItem('item_capture_flag_dire', nil, nil)
+    local flag_drop_dire = CreateItemOnPosition(badGuysBaseVec)
+    if flag_drop_dire then
+        flag_drop_dire:SetContainedItem( flag )
     end
     print('finished onGameStart')
     end,
@@ -57,15 +68,16 @@ RegisterGamemode('ctftheflag', {
                     for i=0,5 do
                         local item = hero:GetItemInSlot(i)
                         if item then
-                            if item:GetAbilityName() == 'item_capture_flag' then
+                            if item:GetAbilityName() == 'item_capture_flag_dire' then
                                UTIL_RemoveImmediate(item)
                                hero:RemoveModifierByName('modifier_creep_slow')
                                hero:RemoveModifierByName('modifier_silence')
-                               hero:RemoveModifierByName('modifier_bloodseeker_thirst_vision')
                                frota.scoreRadiant = frota.scoreRadiant + 1
                                frota:UpdateScoreData()
-                               local flag = CreateItem('item_capture_flag', nil, nil)
-                               local flag_drop = CreateItemOnPosition(Vec3(0,0,0))
+                                local badGuysBase = Entities:FindByName(nil, 'base_badguys')
+                               local badGuysBaseVec = badGuysBase:GetOrigin()
+                               local flag = CreateItem('item_capture_flag_dire', nil, nil)
+                               local flag_drop = CreateItemOnPosition(badGuysBaseVec)
                                if flag_drop then
                                    flag_drop:SetContainedItem( flag )
                                end
@@ -92,12 +104,13 @@ RegisterGamemode('ctftheflag', {
                                UTIL_RemoveImmediate(item)
                                hero:RemoveModifierByName('modifier_creep_slow')
                                hero:RemoveModifierByName('modifier_silence')
-                               hero:RemoveModifierByName('modifier_bloodseeker_thirst_vision')
                                heroWithFlag = nil
                                frota.scoreDire = frota.scoreDire + 1
                                frota:UpdateScoreData()
+                               local goodGuysBase = Entities:FindByName(nil, 'base_goodguys')
+                               local goodGuysBaseVec = goodGuysBase:GetOrigin()
                                local flag = CreateItem('item_capture_flag', nil, nil)
-                               local flag_drop = CreateItemOnPosition(Vec3(0,0,0))
+                               local flag_drop = CreateItemOnPosition(goodGuysBaseVec)
                                if flag_drop then
                                    flag_drop:SetContainedItem( flag )
                                end
@@ -110,29 +123,22 @@ RegisterGamemode('ctftheflag', {
             if heroWithFlag then
                 local hero = heroWithFlag
                 if hero then
-
-
-
-
                     for i=0, 5 do
                         local item = hero:GetItemInSlot(i)
                         if item then
-                            if item:GetAbilityName() == 'item_capture_flag' then
+                            if item:GetAbilityName() == 'item_capture_flag' or item:GetAbilityName() == 'item_capture_flag_dire' then
                                 hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
                                 hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
-                                hero:AddNewModifier(hero, nil, 'modifier_bloodseeker_thirst_vision' ,nil)
                                 heroWithFlag = hero
                                 break
                             else
                                 hero:RemoveModifierByName('modifier_creep_slow')
                                 hero:RemoveModifierByName('modifier_silence')
-                                hero:RemoveModifierByName('modifier_bloodseeker_thirst_vision')
                                 heroWithFlag = nil
                             end
                         else
                             hero:RemoveModifierByName('modifier_creep_slow')
                             hero:RemoveModifierByName('modifier_silence')
-                            hero:RemoveModifierByName('modifier_bloodseeker_thirst_vision')
                             heroWithFlag = nil
                         end
                     end
@@ -147,10 +153,9 @@ RegisterGamemode('ctftheflag', {
             for i=0, 5 do
                 local item = hero:GetItemInSlot(i)
                 if item then
-                    if item:GetAbilityName() == 'item_capture_flag' then
+                    if item:GetAbilityName() == 'item_capture_flag' or item:GetAbilityName() == 'item_capture_flag_dire' then
                         hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
                         hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
-                        hero:AddNewModifier(hero, nil, 'modifier_bloodseeker_thirst_vision' ,nil)
                         heroWithFlag = hero
                         print('flag picked up')
                         break
