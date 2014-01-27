@@ -39,7 +39,6 @@ RegisterGamemode('ctftheflag', {
     end,
  
     onThink = function(frota, dt)
-    print('thinking')
             local goodGuysBase = Entities:FindByName(nil, 'base_goodguys')
             local goodGuysBaseVec = goodGuysBase:GetOrigin()
             local badGuysBase = Entities:FindByName(nil, 'base_badguys')
@@ -106,26 +105,6 @@ RegisterGamemode('ctftheflag', {
                 end
             end
  
-            if heroWithFlag then
-                for i=0,5 do
-                    local hero = heroWithFlag
-                    local item = hero:GetItemInSlot(i)
-                    if item then
-                        if item:GetAbilityName() == 'item_capture_flag' then
-                            hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
-                            hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
-                            heroWithFlag = hero
-                            break
-                        else
-                        hero:RemoveModifierByName('modifier_creep_slow')
-                        hero:RemoveModifierByName('modifier_silence')
-                        end
-                    end
-                end
-            end
- 
-           
-        print('finish thinking')
     end,
  
     dota_item_picked_up = function(frota, keys)
