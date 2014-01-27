@@ -11,41 +11,28 @@ RegisterGamemode('ctftheflag', {
             s = VOTE_SORT_RANGE,
  
             -- Minimal possible value
-            min = 1000,
+            min = 5,
  
             -- Maximal possible value
-            max = 3000,
+            max = 15,
  
             -- Default vaule (if no one votes)
-            def = 1500,
+            def = 10,
  
             -- Slider tick interval
-            tick = 500,
+            tick = 5,
  
             -- Slider step interval
-            step = 250
+            step = 1
         }
     },
  
     onGameStart = function(frota)
     print('running onGameStart')
     local heroWithFlag = nil
-    local goodGuysBase = Entities:FindByName(nil, 'base_goodguys')
-    local goodGuysBaseVec = goodGuysBase:GetOrigin()
-    local badGuysBase = Entities:FindByName(nil, 'base_badguys')
-    local badGuysBaseVec = badGuysBase:GetOrigin()
-
-    local flag = CreateItem('item_capture_flag', nil, nil)
-    local flag_drop = CreateItemOnPosition(goodGuysBaseVec)
-    if flag_drop then
-        flag_drop:SetContainedItem( flag )
-    end
-
-        local flag = CreateItem('item_capture_flag_dire', nil, nil)
-    local flag_drop_dire = CreateItemOnPosition(badGuysBaseVec)
-    if flag_drop_dire then
-        flag_drop_dire:SetContainedItem( flag )
-    end
+    local heroWithDireFlag = nil
+    spawnDireFlag()
+    spawnRadiantFlag()
     print('finished onGameStart')
     end,
  
@@ -72,15 +59,10 @@ RegisterGamemode('ctftheflag', {
                                UTIL_RemoveImmediate(item)
                                hero:RemoveModifierByName('modifier_creep_slow')
                                hero:RemoveModifierByName('modifier_silence')
+                               heroWithDireFlag = nil
                                frota.scoreRadiant = frota.scoreRadiant + 1
                                frota:UpdateScoreData()
-                                local badGuysBase = Entities:FindByName(nil, 'base_badguys')
-                               local badGuysBaseVec = badGuysBase:GetOrigin()
-                               local flag = CreateItem('item_capture_flag_dire', nil, nil)
-                               local flag_drop = CreateItemOnPosition(badGuysBaseVec)
-                               if flag_drop then
-                                   flag_drop:SetContainedItem( flag )
-                               end
+                               spawnDireFlag()
                             end
                         end
                     end
@@ -107,13 +89,7 @@ RegisterGamemode('ctftheflag', {
                                heroWithFlag = nil
                                frota.scoreDire = frota.scoreDire + 1
                                frota:UpdateScoreData()
-                               local goodGuysBase = Entities:FindByName(nil, 'base_goodguys')
-                               local goodGuysBaseVec = goodGuysBase:GetOrigin()
-                               local flag = CreateItem('item_capture_flag', nil, nil)
-                               local flag_drop = CreateItemOnPosition(goodGuysBaseVec)
-                               if flag_drop then
-                                   flag_drop:SetContainedItem( flag )
-                               end
+                               spawnRadiantFlag()
                             end
                         end
                     end
@@ -144,6 +120,32 @@ RegisterGamemode('ctftheflag', {
                     end
                 end                
             end
+
+            if heroWithDireFlag then
+                print('running heroWithDireFlag')
+                local hero = heroWithDireFlag
+                if hero then
+                    for i=0, 5 do
+                        local item = hero:GetItemInSlot(i)
+                        if item then
+                            if  item:GetAbilityName() == 'item_capture_flag_dire' then
+                                hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
+                                hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
+                                heroWithDireFlag = hero
+                                break
+                            else
+                                hero:RemoveModifierByName('modifier_creep_slow')
+                                hero:RemoveModifierByName('modifier_silence')
+                                heroWithDireFlag = nil
+                            end
+                        else
+                            hero:RemoveModifierByName('modifier_creep_slow')
+                            hero:RemoveModifierByName('modifier_silence')
+                            heroWithDireFlag = nil
+                        end
+                    end
+                end                
+            end
             print('finish thinking')
     end,
  
@@ -153,16 +155,57 @@ RegisterGamemode('ctftheflag', {
             for i=0, 5 do
                 local item = hero:GetItemInSlot(i)
                 if item then
-                    if item:GetAbilityName() == 'item_capture_flag' or item:GetAbilityName() == 'item_capture_flag_dire' then
-                        hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
-                        hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
-                        heroWithFlag = hero
-                        print('flag picked up')
-                        break
+                    if item:GetAbilityName() == 'item_capture_flag' then
+                        if hero:GetTeam() == DOTA_TEAM_GOODGUYS then
+                            UTIL_RemoveImmediate(item)
+                            heroWithFlag = nil
+                            spawnRadiantFlag()
+                            break
+                        else
+                            hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
+                            hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
+                            heroWithFlag = hero
+                            print('flag picked up')
+                            break  
+                        end
+                    elseif item:GetAbilityName() == 'item_capture_flag_dire' then
+                        if hero:GetTeam() == DOTA_TEAM_BADGUYS then
+                            UTIL_RemoveImmediate(item)
+                            heroWithDireFlag = nil
+                            spawnDireFlag()
+                            break
+                        else
+                            hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
+                            hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
+                            heroWithDireFlag = hero
+                            print('flag picked up')
+                            break  
+                        end
                     end
                 end
             end
         end
     end,
- 
+
     })
+
+    
+    function spawnRadiantFlag( )
+        local goodGuysBase = Entities:FindByName(nil, 'base_goodguys')
+        local goodGuysBaseVec = goodGuysBase:GetOrigin()
+        local flag = CreateItem('item_capture_flag', nil, nil)
+        local flag_drop = CreateItemOnPosition(goodGuysBaseVec)
+        if flag_drop then
+            flag_drop:SetContainedItem( flag )
+        end
+    end
+
+    function spawnDireFlag( )
+        local badGuysBase = Entities:FindByName(nil, 'base_badguys')
+        local badGuysBaseVec = badGuysBase:GetOrigin()
+        local flag = CreateItem('item_capture_flag_dire', nil, nil)
+        local flag_drop = CreateItemOnPosition(badGuysBaseVec)
+        if flag_drop then
+            flag_drop:SetContainedItem( flag )
+        end
+    end
