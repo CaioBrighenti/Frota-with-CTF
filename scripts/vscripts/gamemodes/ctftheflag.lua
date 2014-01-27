@@ -41,8 +41,8 @@ RegisterGamemode('ctftheflag', {
             local goodGuysBaseVec = goodGuysBase:GetOrigin()
             local badGuysBase = Entities:FindByName(nil, 'base_badguys')
             local badGuysBaseVec = badGuysBase:GetOrigin()
-            local goodUnitsOnPoint = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, goodGuysBaseVec, null, 300, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, 0, 0, false)
-            local badUnitsOnPoint = FindUnitsInRadius(DOTA_TEAM_BADGUYS, badGuysBaseVec, null, 300, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, 0, 0, false)      
+            local goodUnitsOnPoint = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, goodGuysBaseVec, null, 150, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, 0, 0, false)
+            local badUnitsOnPoint = FindUnitsInRadius(DOTA_TEAM_BADGUYS, badGuysBaseVec, null, 150, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, 0, 0, false)      
             local tableSize = 0
            
             for k,v in pairs(goodUnitsOnPoint) do
