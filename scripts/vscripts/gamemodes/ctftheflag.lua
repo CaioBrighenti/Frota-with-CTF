@@ -73,7 +73,6 @@ RegisterGamemode('ctftheflag', {
  
             for k,v in pairs(badUnitsOnPoint) do
                 tableSize = tableSize + 1
-                print(k,v)
             end
      
             for i=1,tableSize do
@@ -122,7 +121,6 @@ RegisterGamemode('ctftheflag', {
             end
 
             if heroWithDireFlag then
-                print('running heroWithDireFlag')
                 local hero = heroWithDireFlag
                 if hero then
                     for i=0, 5 do
@@ -146,7 +144,6 @@ RegisterGamemode('ctftheflag', {
                     end
                 end                
             end
-            print('finish thinking')
     end,
  
     dota_item_picked_up = function(frota, keys)
@@ -165,7 +162,6 @@ RegisterGamemode('ctftheflag', {
                             hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
                             hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
                             heroWithFlag = hero
-                            print('flag picked up')
                             break  
                         end
                     elseif item:GetAbilityName() == 'item_capture_flag_dire' then
@@ -178,7 +174,6 @@ RegisterGamemode('ctftheflag', {
                             hero:AddNewModifier(hero, nil, 'modifier_creep_slow' ,nil)
                             hero:AddNewModifier(hero, nil, 'modifier_silence' ,nil)
                             heroWithDireFlag = hero
-                            print('flag picked up')
                             break  
                         end
                     end
