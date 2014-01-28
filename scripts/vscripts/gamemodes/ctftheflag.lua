@@ -63,6 +63,8 @@ RegisterGamemode('ctftheflag', {
                                heroWithDireFlag = nil
                                frota.scoreRadiant = frota.scoreRadiant + 1
                                frota:UpdateScoreData()
+                               local particleFlag = ParticleManager:CreateParticle( 'legion_commander_duel_victory', PATTACH_OVERHEAD_FOLLOW, hero)
+                               local particlePlus = ParticleManager:CreateParticle( 'pudge_fleshheap_count', PATTACH_OVERHEAD_FOLLOW, hero)
                                spawnDireFlag()
                             end
                         end
@@ -90,6 +92,8 @@ RegisterGamemode('ctftheflag', {
                                heroWithFlag = nil
                                frota.scoreDire = frota.scoreDire + 1
                                frota:UpdateScoreData()
+                               local particleFlag = ParticleManager:CreateParticle( 'legion_commander_duel_victory', PATTACH_OVERHEAD_FOLLOW, hero)
+                               local particlePlus = ParticleManager:CreateParticle( 'pudge_fleshheap_count', PATTACH_OVERHEAD_FOLLOW, hero)
                                spawnRadiantFlag()
                             end
                         end
