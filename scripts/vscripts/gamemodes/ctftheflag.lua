@@ -33,6 +33,8 @@ RegisterGamemode('ctftheflag', {
     local heroWithDireFlag = nil
     spawnDireFlag()
     spawnRadiantFlag()
+    local options = frota:GetOptions()
+    frota:SetScoreLimit(options.scoreLimit)
     print('finished onGameStart')
     end,
  
@@ -156,6 +158,7 @@ RegisterGamemode('ctftheflag', {
                     end
                 end                
             end
+
     end,
  
     dota_item_picked_up = function(frota, keys)
